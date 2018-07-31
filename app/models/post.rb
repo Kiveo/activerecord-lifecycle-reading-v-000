@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   # before_save :make_title_case
   before_validation :make_title_case
-
+  before_save :email_author_about_post #author is alerted after validation and just prior to db alteration.
   private
 
   def is_title_case
