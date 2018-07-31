@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   # before_save :make_title_case #occurs just before save to db.
   before_validation :make_title_case #occurs before BOTH validation and save to db.
   before_save :email_author_about_post #author is alerted after validation and just prior to db alteration.
+  #before_create will run similarly to before_save, but only upon the intitial creation of an object.
+  
   private
 
   def is_title_case
